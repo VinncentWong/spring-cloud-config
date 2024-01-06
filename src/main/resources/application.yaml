@@ -1,0 +1,22 @@
+spring:
+  application:
+    # up to you, you can change your application name
+    name: spring-cloud-config
+  profiles:
+    # you need to enable active Profile Vault to make Spring easily
+    # connect to Vault
+    active: vault
+  cloud:
+    config:
+      server:
+        vault:
+          # tell the connection host
+          host: localhost
+          # tell the connection port
+          port: 8200
+          # tell the scheme, it could be http/https
+          scheme: http
+          # it is recommended to use kvVersion of 2
+          kvVersion: 2
+          # the backend name
+          backend: spring
